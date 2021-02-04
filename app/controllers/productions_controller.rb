@@ -46,6 +46,6 @@ class ProductionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def production_params
-      params.fetch(:production, {})
+      params.require(:production).permit(:title, :cast, :description, :classic, :theater_id)
     end
 end

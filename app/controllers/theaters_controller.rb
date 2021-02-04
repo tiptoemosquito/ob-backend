@@ -46,6 +46,6 @@ class TheatersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def theater_params
-      params.fetch(:theater, {})
+      params.require(:theater).permit(:name)
     end
 end
